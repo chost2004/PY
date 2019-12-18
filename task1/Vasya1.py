@@ -10,7 +10,7 @@ print('enter total profit')
 P=input()
 print('enter total late')
 L=input()
-if (int(P)+int(L)//b*int(a))//int(p) > 0:
+if (int(P)+int(L)//b*int(a))%int(p) > 0:
    C=100
 else:
    C=0
