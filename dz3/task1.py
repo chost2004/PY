@@ -8,11 +8,13 @@ The input string can be assumed to contain only alphabets (both uppercase and lo
 s = input('Введите текст:').lower()
 i = 0
 n = 0
+m = []
 while i < len(s):
-    if n < s.count(s[i]):
-        n = s.count(s[i])
+    if s.count(s[i]) > 1 and m.count(s[i]) < 1 :
+        m.append(s[i])
+        n += 1
     i+=1
-print (n)
+print (n, "так как повторяются символы:", m)
     
 
 
