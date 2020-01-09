@@ -17,18 +17,8 @@ while i <= len(s)- 2:
         knot += 1
         p.append(knot)
         knot = 0
-    elif (s[i] == '~') and (s[i+1] == '~'):
-        space = 0
-        for z in range (i, len(s)-1):
-            if s[z] == '~':
-                space += 1
-            else:
-                i = z - 1
-                space = space // 2 + 1
-                print (space)
-                for c in range (space):
-                    p.append(0)
-                break
+    elif (s[i] == '~') and (s[i-1] == '~'):
+        p.append(0)
     i += 1
 #print (p)
 p1 = []
@@ -36,28 +26,24 @@ for num in p:
     p1.append(str(num))
 primer = ''.join(p1)
 otvet = eval(primer)
+otvet = int(otvet)
 print (otvet)
 otvet = str(otvet)
-print (type(otvet))
+#print (type(otvet))
 quipu = []
-for num in otvet:
-    if int(num) in range (1, 10):
-        q = '@' * int(num)
-        print (q)
-        
-
-
-     
-
-'''
-@@@@@@@
-i = 1
-n = 0
-while i <= s:
-    i (s % i) == 0:
-        n = n + i 
+i = 0
+while i <= (len (otvet) -1):
+    if (int(otvet[i]) in range (1, 10)) and (i < (len (otvet) -1)):
+        q = '@' * int(otvet [i])
+        quipu.append(q)
+        quipu.append('~')
+    elif (int(otvet[i]) in range (1, 10)) and (i == (len (otvet) -1)):
+        q = '@' * int(otvet [i])
+        quipu.append(q)
+    elif int(otvet[i]) == 0:
+        quipu.append('~')
     i+=1
-print (n)
-    
-'''
+print (''.join(quipu))
+        
+        
 
