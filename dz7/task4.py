@@ -2,7 +2,7 @@
 parse molekula
 '''
 import re
-t=input('Введите формулу: ').replace("[", '(').replace("]", ')')
+t=input('Введите формулу: ').replace("[", '(').replace("]", ')').replace("{", '(').replace("}", ')')
 d={}
 p,q="(\([^\(\)]*\))(\d*)","([A-Z][a-z]*)(\d*)"
 for i in re.findall(q,t):
